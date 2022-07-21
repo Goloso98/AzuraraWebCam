@@ -9,7 +9,11 @@ follow streamlink guide.
 then sideload the localhost plugin
 
 ## use
+### proxy mode
 start the proxy server `python3 localhost.py`
 then run streamlink `streamlink http://localhost:3000 best -p=mpv -l debug`
+
+### website mode
+run `python3 server.py`
 
 Enjoy!
