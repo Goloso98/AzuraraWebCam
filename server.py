@@ -38,16 +38,20 @@ class MyHandler(BaseHTTPRequestHandler):
   def do_GET(self):
     if self.path.startswith('/playlist'):
       self.send_response(200)
+      self.send_header("Content-Type", "application/vnd.apple.mpegurl")
       self.end_headers()
       self.wfile.write(get_playlist())
       return
     if self.path.startswith('/chunklist'):
       self.send_response(200)
+      self.send_header("Content-Type", "application/vnd.apple.mpegurl")
       self.end_headers()
       self.wfile.write(get_chunklist())
       return
     if self.path.startswith('/media'):
       self.send_response(200)
+      self.send_header("Content-Type", "video/MP2T")
+      self.send_header("Cache-Control", "no-cache")
       self.end_headers()
       self.wfile.write(get_media(self.path))
       return
