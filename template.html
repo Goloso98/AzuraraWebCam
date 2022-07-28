@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Azurara WebCam</title>
 </head>
@@ -13,7 +13,7 @@
         background-color: black;
     }
 </style>
-<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
 
 
 <!-- HTML -->
@@ -24,17 +24,18 @@
 
 <!-- JS code -->
 <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
-<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+<script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
 
 <script>
-var player = videojs('hls-example', {
-    autoplay: 'muted',
-    fluid: true,
-});
-player.play();
+    var options = {
+        //autoplay: 'muted',
+        fluid: true,
+    };
+    
+var player = videojs('hls-example', options, function onPlayerReady() {
+    videojs.log('Your player is ready!');});
+    
 </script>
-
+    
 </body>
 </html>
